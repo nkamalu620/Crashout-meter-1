@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database');
+import { DataTypes } from 'sequelize';
+import sequelize from '../database.js';
 
 const User = sequelize.define('User', {
   Name: {
@@ -12,7 +12,7 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: true
   },
-  
+
   email: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -24,4 +24,4 @@ const User = sequelize.define('User', {
   }
 });
 
-module.exports = User;
+module.exports = { User };
