@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "../sync.js"]
+  "include": ["src", "../sync.js", "../server/src/Models"]
 }

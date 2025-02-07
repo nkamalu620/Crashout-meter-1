@@ -1,5 +1,5 @@
 import sequelize from './client/src/database.js';
-import User from './client/src/Models/User.js';
+import User from './server/src/Models/User.js';
 
 sequelize.sync({ force: true }).then(() => {
   console.log('Database & tables created!');
