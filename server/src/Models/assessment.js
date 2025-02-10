@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../../../client/src/database.js';
-import { User } from './User.js';
+import { employee } from './employee.js';
 
-const Assessment = sequelize.define('Assessment', {
+const assessment = sequelize.define('assessment', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -17,3 +17,8 @@ const Assessment = sequelize.define('Assessment', {
     allowNull: false
   }
 });
+
+Employee.hasMany(Assessment, { foreignKey: 'employeeId' });
+Assessment.belongsTo(Employee, { foreignKey: 'employeeId' });
+
+export { assessment };

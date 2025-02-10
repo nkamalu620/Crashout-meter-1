@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import sequelize from '../../../client/src/database.js';
+import sequelize from '../config/connection.js';
 
-const User = sequelize.define('User', {
+const employee = sequelize.define('employee', {
   Name: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -24,4 +24,4 @@ const User = sequelize.define('User', {
   }
 });
 
-module.exports = { User };
+module.exports = { employee };
