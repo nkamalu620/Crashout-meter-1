@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+import { DataTypes, Sequelize } from 'sequelize';
+import sequelize from '../config/connection';
 
 const employee = sequelize.define('employee', {
   Name: {
@@ -24,4 +24,4 @@ const employee = sequelize.define('employee', {
   }
 });
 
-module.exports = { employee };
+export default employee;

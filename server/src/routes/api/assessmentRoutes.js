@@ -1,13 +1,13 @@
-const express = require('express');
-const { getAssessments, getAssessmentsById, createAssessment, deleteAssessment} = require('../../controllers/employeeController.js');
-const authenticateToken = require('../../middleware/auth.js');
+import { Router } from 'express';
+import { getAssessments, getAssessmentsById, createAssessment, deleteAssessment } from '../../controllers/assessmentController.js';
+import authenticateToken from '../../middleware/auth.js';
 
-const router = express.Router();
+const router = Router();
 
 // Use the authenticateToken middleware for routes that require authentication
 router.get('/', authenticateToken, getAssessments);
 router.get('/:id', authenticateToken, getAssessmentsById);
-router.put('/:id', authenticateToken, createAssessments);
-router.delete('/:id', authenticateToken, deleteAssessments);
+router.put('/:id', authenticateToken, createAssessment);
+router.delete('/:id', authenticateToken, deleteAssessment);
 
-module.exports = router;
+export default router;

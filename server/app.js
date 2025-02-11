@@ -1,12 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const authRoutes = require('./routes/auth.js');
-const employeeRoutes = require('./routes/api/employeeRoutes.js');
-const assessmentRoutes = require('./routes/api/assessmentRoutes.js');
+import express from 'express';
+import authRoutes from './src/middleware/auth.js';
+import employeeRoutes from './src/routes/api/employeeRoutes.js';
+import assessmentRoutes from './src/routes/api/assessmentRoutes.js';
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/employees', employeeRoutes);
 app.use('/api/assessments', assessmentRoutes);

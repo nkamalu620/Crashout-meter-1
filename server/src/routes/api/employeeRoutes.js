@@ -10,4 +10,4 @@ router.get('/:id', authenticateToken, getEmployeeById);
 router.put('/:id', authenticateToken, updateEmployee);
 router.delete('/:id', authenticateToken, deleteEmployee);
 
-module.exports = router;
+export default router;

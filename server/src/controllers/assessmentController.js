@@ -1,5 +1,5 @@
-const { assessment } = require('../Models/assessment.js');
-const { employee } = require('../Models/employee.js');
+import assessment  from '../Models/assessment.js';
+import employee from '../Models/employee.js';
 
 const getAssessments = async (req, res) => {
     try {
@@ -13,7 +13,7 @@ const getAssessments = async (req, res) => {
 const getAssessmentsById = async (req, res) => {
     const { id } = req.params;
     try {
-        const assessment = await Assessment.findByPk(id, { include: employee });
+        const assessment = await assessment.findByPk(id, { include: employee });
         if (!assessment) {
           return res.status(404).json({ message: 'Assessment not found' });
         }
@@ -30,7 +30,7 @@ const createAssessment = async (req, res) => {
     if (!employee) {
       return res.status(404).json({ message: 'User not found' });
     }
-    const assessment = await Assessment.create({ employeeId, stressLevel, date });
+    const assessment = await assessment.create({ employeeId, stressLevel, date });
     res.status(201).json({ message: 'Assessment created successfully', assessment });
   } catch (error) {
     res.status(500).json({ message: 'Error creating assessment', error });
@@ -52,6 +52,6 @@ const deleteAssessment = async (req, res) => {
       }
     };
 
-    module.exports = { getAssessments, getAssessmentById, createAssessment, deleteAssessment };
+    export { getAssessments, getAssessmentsById, createAssessment, deleteAssessment };
 
 
