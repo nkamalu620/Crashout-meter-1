@@ -37,22 +37,6 @@ const createAssessment = async (req, res) => {
   }
 };
 
-const updateAssessment = async (req, res) => {
-    const { id } = req.params;
-    const { stressLevel, date } = req.body;
-    try {
-        const assessment = await Assessment.findByPk(id);
-        if (!assessment) {
-          return res.status(404).json({ message: 'Assessment not found' });
-        }
-        assessment.stressLevel = stressLevel;
-        assessment.date = date;
-        await assessment.save();
-        res.status(200).json({ message: 'Assessment updated successfully', assessment });
-      } catch (error) {
-        res.status(500).json({ message: 'Error updating assessment', error });
-      }
-    };
 
 const deleteAssessment = async (req, res) => {
     const { id } = req.params;
