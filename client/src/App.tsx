@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './vite.svg'
-import './App.css'
+import Login from './pages/login';
 
 function App() {
   return (
     <>
-      <Nav />
-      <main>
-        <Outlet />
-      </main>
+      <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        {/* Add other routes here */}
+      </Routes>
+    </Router>
       </>
   );
 }
