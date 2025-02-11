@@ -1,7 +1,8 @@
 import { DataTypes, Sequelize } from 'sequelize';
 import employee from './employee.js';
+import sequelize from '../config/connection.js';
 
-const assessment = Sequelize.define('assessment', {
+const assessment = sequelize.define('assessment', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

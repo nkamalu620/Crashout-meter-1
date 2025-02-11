@@ -1,6 +1,6 @@
-const express = require('express');
-const { getEmployees, getEmployeeById, updateEmployee, deleteEmployee } = require('../../controllers/employeeController.js');
-const authenticateToken = require('../../middleware/auth.js');
+import express from 'express';
+import { getEmployees, getEmployeeById, updateEmployee, deleteEmployee } from '../../controllers/employeeController.js';
+import authenticateToken from '../../middleware/auth.js';
 
 const router = express.Router();
 
