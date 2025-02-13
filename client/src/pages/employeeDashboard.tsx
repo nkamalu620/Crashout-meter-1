@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 
 
-const EmployeeDashboard = () => {
+const employeeDashboard = () => {
 
     const employeeName = 'John Smith';
     const employeePicture = 'https://via.placeholder.com/150';
@@ -10,7 +11,7 @@ const EmployeeDashboard = () => {
 return (
     <div className="employee-dashboard">
       <div className="employee-info">
-        <img src={employeePictureUrl} alt="Employee" className="employee-picture" />
+        <img src={employeePicture} alt="Employee" className="employee-picture" />
         <h2>{employeeName}</h2>
       </div>
       <nav className="employee-nav">

@@ -22,7 +22,7 @@ useEffect(() => {
             Authorization: `Bearer ${token}`,
           },
         });
-        setResults(response.data);
+        fetchResults(response.data);
       } catch (err) {
         setError('Error fetching results');
       }
@@ -58,3 +58,7 @@ useEffect(() => {
 };
 
 export default managerDashboard;
+
+function setError(arg0: string) {
+  throw new Error('Function not implemented.');
+}

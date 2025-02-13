@@ -20,4 +20,4 @@ const results = () => {
 
 };
 
-export default Results;
+export default results;
