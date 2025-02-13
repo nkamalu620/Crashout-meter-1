@@ -10,7 +10,7 @@ const Register = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
   
-const handleRegister = async (e: FormEvent) => {
+const handleSumbit = async (e: FormEvent) => {
       e.preventDefault();
       try {
         await register({ name, email, password, position });
