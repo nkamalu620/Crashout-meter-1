@@ -1,5 +1,12 @@
 import { JwtPayload, jwtDecode } from 'jwt-decode';
 
+interface UserData {
+  // Define the properties of UserData based on your requirements
+  id: string;
+  email: string;
+  exp: number;
+}
+
 class AuthService {
   getProfile() {
     return jwtDecode<UserData>(this.getToken());
