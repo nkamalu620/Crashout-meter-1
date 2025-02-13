@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './managerDashboard.css';
+
 
 interface Assessment {
     id: number;
     stressLevel: number;
     date: string;
+    employeeName: string;
 }
 
 const managerDashboard = () => {

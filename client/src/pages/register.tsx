@@ -21,7 +21,6 @@ const handleSumbit = async (e: FormEvent) => {
       }
     }
     const registerUser = async ({ name, position, email, password }: { name: string, position: string, email: string, password: string }) => {
-      // Add your registration logic here, e.g., API call
       console.log('User registered:', { name, position, email, password });
     }
 

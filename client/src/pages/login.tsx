@@ -1,7 +1,5 @@
 import { useState } from 'react';
-//import axios from 'axios';
-//import { useNavigate } from 'react-router-dom';
-import Auth from '../utils/auth'; // Ensure you have an Auth module to handle authentication
+import Auth from '../utils/auth'; 
 
 
 import { ChangeEvent } from "react";
