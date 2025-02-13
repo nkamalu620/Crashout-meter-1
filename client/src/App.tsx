@@ -6,7 +6,11 @@ function App() {
       <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/employeeDashboard" element={<employeeDashboard />} />
+        <Route path="/resultHistory" element={<resultHistory />} />
+        <Route path="/assessmentForm" element={<assessmentForm />} />
+        <Route path="/results" element={<results />} />
         {/* Add other routes here */}
       </Routes>
     </Router>
