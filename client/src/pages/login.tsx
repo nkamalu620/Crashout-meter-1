@@ -1,6 +1,8 @@
-//import React, { FormEvent, useState } from 'react';
-//import axios from 'axios';
-//import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Auth from '../utils/auth'; 
+
+
+import { ChangeEvent } from "react";
 
 const Login = () => {
     const [loginData, setLoginData] = useState({
@@ -16,15 +18,15 @@ const Login = () => {
       });
     };
   
-    const handleSubmit = async (e: FormEvent) => {
-      e.preventDefault();
+    const handleSubmit = async () => {
       try {
-        const data = await Login(loginData);
-        Auth.login(data.token);
+        const response = await loginService(loginData);
+        Auth.login(response.data.token);
       } catch (err) {
         console.error('Failed to login', err);
       }
     };
+
   return (
     <div>
       <h2>Login</h2>
@@ -32,17 +34,26 @@ const Login = () => {
         <div>
           <label>
             Username:
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" name="username" value={loginData.username} onChange={handleChange} />
           </label>
         </div>
         <div>
           <label>
             Password:
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" name="password" value={loginData.password} onChange={handleChange} />
           </label>
         </div>
         <button type="submit">Login</button>
       </form>
     </div>
   );
+}
+
+export default Login;
+
+import axios from 'axios';
+
+async function loginService(loginData: { username: string; password: string; }) {
+  const response = await axios.post('/api/login', loginData);
+  return response;
 }
