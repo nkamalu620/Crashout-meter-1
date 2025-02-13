@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Auth from '../utils/auth'; 
-
+import { login } from '../api/authAPI';
 
 import { ChangeEvent } from "react";
 
@@ -20,8 +20,8 @@ const Login = () => {
   
     const handleSubmit = async () => {
       try {
-        const response = await loginService(loginData);
-        Auth.login(response.data.token);
+        const data = await login(loginData);
+        Auth.login(data.token);
       } catch (err) {
         console.error('Failed to login', err);
       }
@@ -47,13 +47,11 @@ const Login = () => {
       </form>
     </div>
   );
-}
+};
 
 export default Login;
 
-import axios from 'axios';
 
-async function loginService(loginData: { username: string; password: string; }) {
-  const response = await axios.post('/api/login', loginData);
-  return response;
-}
+
+
+

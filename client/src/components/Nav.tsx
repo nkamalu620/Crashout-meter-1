@@ -21,7 +21,7 @@ const Nav = () => {
     return (
       <div className='nav'>
         <div className='nav-title'>
-          <Link to='/'>Krazy Kanban Board</Link>
+          <Link to='/'>Login</Link>
         </div>
         <ul>
         {

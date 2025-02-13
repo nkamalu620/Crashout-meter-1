@@ -17,8 +17,7 @@ function App() {
         <Route path="/assessmentForm" element={<AssessmentForm />} />
         <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
         <Route path="/results" element={<Results />} />
-        {/* Add other routes here */}
-      </Routes>
+        </Routes>
     </Router>
       </>
   );
