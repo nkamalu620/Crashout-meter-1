@@ -1,10 +1,10 @@
-import React, { FormEvent, useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import Auth from '../auth'; // Ensure you have an Auth module to handle authentication
-import { login as loginService } from '../services/authService'; // Ensure you have a login service
+import { useState } from 'react';
+//import axios from 'axios';
+//import { useNavigate } from 'react-router-dom';
+import Auth from '../utils/auth'; // Ensure you have an Auth module to handle authentication
 
-import { ChangeEvent, FormEvent } from "react";
+
+import { ChangeEvent } from "react";
 
 const Login = () => {
     const [loginData, setLoginData] = useState({
@@ -20,8 +20,7 @@ const Login = () => {
       });
     };
   
-    const handleSubmit = async (e: FormEvent) => {
-        const data = await loginService(loginData);
+    const handleSubmit = async () => {
       try {
         const response = await loginService(loginData);
         Auth.login(response.data.token);
@@ -29,9 +28,6 @@ const Login = () => {
         console.error('Failed to login', err);
       }
     };
-  function setPassword(value: string): void {
-    throw new Error('Function not implemented.');
-  }
 
   return (
     <div>
@@ -53,4 +49,13 @@ const Login = () => {
       </form>
     </div>
   );
+}
+
+export default Login;
+
+import axios from 'axios';
+
+async function loginService(loginData: { username: string; password: string; }) {
+  const response = await axios.post('/api/login', loginData);
+  return response;
 }

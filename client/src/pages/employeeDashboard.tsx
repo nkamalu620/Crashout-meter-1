@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
 
-
-
 const employeeDashboard = () => {
 
     const employeeName = 'John Smith';
@@ -26,9 +24,9 @@ return (
       </nav>
     </div>
   );
+};
 
-
-}
+export default employeeDashboard;
 
 
 

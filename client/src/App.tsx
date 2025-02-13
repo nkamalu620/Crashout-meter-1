@@ -1,4 +1,9 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Login from './pages/login';
+import Register from './pages/register';
+import ResultHistory from './pages/resultHistory';
+import AssessmentForm from './pages/assessmentForm';
+import Results from './pages/results';
 
 function App() {
   return (
@@ -7,10 +12,10 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/employeeDashboard" element={<employeeDashboard />} />
-        <Route path="/resultHistory" element={<resultHistory />} />
-        <Route path="/assessmentForm" element={<assessmentForm />} />
-        <Route path="/results" element={<results />} />
+        <Route path="/resultHistory" element={<ResultHistory />} />
+        <Route path="/assessmentForm" element={<AssessmentForm />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/results" element={<Results />} />
         {/* Add other routes here */}
       </Routes>
     </Router>

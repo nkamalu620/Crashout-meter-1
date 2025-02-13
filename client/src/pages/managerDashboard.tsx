@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './managerDashboard.css';
 
@@ -11,8 +11,6 @@ interface Assessment {
 const managerDashboard = () => {
     const [results, setResults] = useState<Assessment[]>([]);
     const [error, setError] = useState('');
-}
-
 useEffect(() => {
     const fetchResults = async () => {
       try {
@@ -22,7 +20,7 @@ useEffect(() => {
             Authorization: `Bearer ${token}`,
           },
         });
-        fetchResults(response.data);
+        setResults(response.data);
       } catch (err) {
         setError('Error fetching results');
       }
@@ -33,7 +31,6 @@ useEffect(() => {
 
   return (
     <div>
-      <h2>Employee Stress Results</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <table>
         <thead>
@@ -57,8 +54,8 @@ useEffect(() => {
   );
 };
 
-export default managerDashboard;
 
-function setError(arg0: string) {
+
+export default managerDashboard;
   throw new Error('Function not implemented.');
-}
+

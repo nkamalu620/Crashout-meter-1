@@ -1,4 +1,5 @@
-
+import { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
@@ -13,18 +14,22 @@ const Register = () => {
 const handleSumbit = async (e: FormEvent) => {
       e.preventDefault();
       try {
-        await register({ name, email, password, position });
+        await registerUser({ name, position, email, password });
         navigate('/login');
       } catch (err) {
         setError('Failed to register');
       }
+    }
+    const registerUser = async ({ name, position, email, password }: { name: string, position: string, email: string, password: string }) => {
+      // Add your registration logic here, e.g., API call
+      console.log('User registered:', { name, position, email, password });
     }
 
 
 return (
     <div>
       <h2>Register</h2>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={handleSumbit}>
         <div>
           <label>Name:</label>
           <input
