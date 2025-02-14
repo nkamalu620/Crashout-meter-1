@@ -9,8 +9,8 @@ const results: React.FC = () => {
     return (
         <>
         <div>
-            <h2>Results</h2>
-            <p>Your Crashout meter is: {totalScore}</p>
+            <h2 class='nav-link'>Results</h2>
+            <p class='nav-link'>Your Crashout meter is: {totalScore}</p>
             <p>
                 {totalScore <= 10 && 'Your crashout meter is low. Keep up the good work!'}
                 {totalScore > 10 && totalScore <= 20 && 'Your crashout meter is moderate. Consider some relaxation techniques.'}
