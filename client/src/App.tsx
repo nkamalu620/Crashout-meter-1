@@ -18,7 +18,7 @@ function App() {
         <Route path="/resultHistory" element={<ResultHistory />} />
         <Route path="/assessmentForm" element={<AssessmentForm />} />
         <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
-        <Route path="/results" element={<Results />} />
+        <Route path="/result" element={<Results />} />
         </Routes>
     </Router>
       </>

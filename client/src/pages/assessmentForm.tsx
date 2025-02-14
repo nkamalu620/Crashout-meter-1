@@ -48,7 +48,7 @@ return (
     <label>Question 2: How do you feel about the difficulties are tasks you are given</label>
     <input
             type="number"
-            name="question1"
+            name="question2"
             value={responses.question2}
             onChange={handleChange}
             min="1"
@@ -60,7 +60,7 @@ return (
     <label>Question 3: How do you feel about the amount of takss you are given</label>
     <input
             type="number"
-            name="question1"
+            name="question3"
             value={responses.question3}
             onChange={handleChange}
             min="1"
@@ -72,7 +72,7 @@ return (
     <label>Question 4: How do you feel about the amount of support you are getting?</label>
     <input
             type="number"
-            name="question1"
+            name="question4"
             value={responses.question4}
             onChange={handleChange}
             min="1"
@@ -84,7 +84,7 @@ return (
     <label>Question 5: How do you feel about the overall functions of the job</label>
     <input
             type="number"
-            name="question1"
+            name="question5"
             value={responses.question5}
             onChange={handleChange}
             min="1"
