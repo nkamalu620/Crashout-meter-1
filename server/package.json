@@ -5,16 +5,15 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "build": "npx tsc",
-    "start": "npm run build && node dist/server.js --ignore client",
-    "dev": "npx nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node dist/seeds/index.js"
+    "start": "node src/app.js",
+    "dev": "npx nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
-    "watch": ["src"],
-    "ext": "ts,json,js",
-    "exec": "npx tsc && node dist/server.js"
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,json,js"
   },
   "keywords": [],
   "author": "",

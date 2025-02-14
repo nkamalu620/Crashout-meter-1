@@ -14,6 +14,7 @@ const Login: React.FC = () => {
   
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       const { name, value } = e.target;
+      // console.log(loginData, name, value);
       setLoginData({
         ...loginData,
         [name]: value
@@ -38,7 +39,7 @@ const Login: React.FC = () => {
         <div>
           <label>
             email:
-            <input type="text" name="username" value={loginData.email} onChange={handleChange} />
+            <input type="text" name="email" value={loginData.email} onChange={handleChange} />
           </label>
         </div>
         <div>

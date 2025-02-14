@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { register } from '../api/authAPI';
+import Auth from '../utils/auth';
 
 const Register: React.FC = () => {
     
@@ -21,8 +22,19 @@ const handleSumbit = async (e: FormEvent) => {
       }
     }
     const registerUser = async ({ name, position, email, password }: { name: string, position: string, email: string, password: string }) => {
-      console.log('User registered:', { name, position, email, password });
-    }
+          try {
+            const data = await register({ name, position, email, password });
+            if (data && data.token) {
+              Auth.register(data.token);
+            } else {
+              throw new Error('Registration failed: No token received');
+            }
+            navigate('/employeeDashboard');
+          } catch (err) {
+            console.error('Failed to login', err);
+          }
+          console.log('User registered:', { name, position, email, password });
+        }
 
 
 return (
