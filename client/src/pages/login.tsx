@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import React, { FormEvent, useState, ChangeEvent } from 'react';
 import Auth from '../utils/auth'; 
 import { login } from '../api/authAPI';
+import { useNavigate } from 'react-router-dom';
 
-import { ChangeEvent } from "react";
-
-const Login = () => {
+const Login: React.FC = () => {
     const [loginData, setLoginData] = useState({
       email: '',
       password: ''
     });
+  
+    const navigate = useNavigate();
+
   
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       const { name, value } = e.target;
@@ -18,10 +20,12 @@ const Login = () => {
       });
     };
   
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: FormEvent) => {
+      e.preventDefault();
       try {
         const data = await login(loginData);
         Auth.login(data.token);
+        navigate('/employeeDashboard');
       } catch (err) {
         console.error('Failed to login', err);
       }

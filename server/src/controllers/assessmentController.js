@@ -26,7 +26,7 @@ const getAssessmentsById = async (req, res) => {
 const createAssessment = async (req, res) => {
     const { employeeId, stressLevel, date } = req.body;
   try {
-    const employee = await Employee.findByPk(employeeId);
+    const employee = await employee.findByPk(employeeId);
     if (!employee) {
       return res.status(404).json({ message: 'User not found' });
     }
