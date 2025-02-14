@@ -6,7 +6,7 @@ export const register = async (req, res) => {
     const { name, email, password, position } = req.body;
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
-      const user = await user.create({ name, email, password: hashedPassword, position });
+      const user = await employee.create({ name, email, password: hashedPassword, position });
       res.status(201).json({ message: 'User registered successfully', user });
     } catch (error) {
       res.status(500).json({ message: 'Error registering user', error });
@@ -16,7 +16,7 @@ export const register = async (req, res) => {
   export const login = async (req, res) => {
     const { email, password } = req.body;
     try {
-        const user = await User.findOne({ where: { email } });
+        const user = await employee.findOne({ where: { email } });
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
