@@ -5,12 +5,14 @@ import ResultHistory from './pages/resultHistory';
 import AssessmentForm from './pages/assessmentForm';
 import Results from './pages/results';
 import EmployeeDashboard from './pages/employeeDashboard';
+import FrontPage from './pages/frontPage';
 
 function App() {
   return (
     <>
       <Router>
       <Routes>
+        <Route path="/" element={<FrontPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/resultHistory" element={<ResultHistory />} />

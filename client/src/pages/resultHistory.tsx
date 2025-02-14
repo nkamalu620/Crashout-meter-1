@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface Assessment {
@@ -7,7 +7,7 @@ interface Assessment {
     date: string;
 }
 
-const resultHistory = () => {
+const resultHistory: React.FC = () => {
     const [results, setResults] = useState<Assessment[]>([]);
     const [error, setError] = useState('');
     useEffect(() => {

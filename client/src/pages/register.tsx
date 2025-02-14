@@ -1,8 +1,8 @@
-import { useState, FormEvent } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const Register = () => {
+const Register: React.FC = () => {
     
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

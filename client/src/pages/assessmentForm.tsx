@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const assessmentForm = () => {
+const assessmentForm: React.FC = () => {
     const [responses, setResponses] = useState({
         question1: 0,
         question2: 0,

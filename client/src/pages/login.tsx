@@ -6,7 +6,7 @@ import { ChangeEvent } from "react";
 
 const Login = () => {
     const [loginData, setLoginData] = useState({
-      username: '',
+      email: '',
       password: ''
     });
   
@@ -33,8 +33,8 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            Username:
-            <input type="text" name="username" value={loginData.username} onChange={handleChange} />
+            email:
+            <input type="text" name="username" value={loginData.email} onChange={handleChange} />
           </label>
         </div>
         <div>

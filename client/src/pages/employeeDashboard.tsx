@@ -1,7 +1,8 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 
-const employeeDashboard = () => {
+const employeeDashboard: React.FC = () => {
 
     const employeeName = 'John Smith';
     const employeePicture = 'https://via.placeholder.com/150';

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -9,7 +10,7 @@ interface Assessment {
     employeeName: string;
 }
 
-const managerDashboard = () => {
+const managerDashboard: React.FC = () => {
     const [results, setResults] = useState<Assessment[]>([]);
     const [error, setError] = useState('');
 useEffect(() => {
