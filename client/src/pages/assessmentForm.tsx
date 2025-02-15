@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 const assessmentForm: React.FC = () => {
@@ -11,6 +12,7 @@ const assessmentForm: React.FC = () => {
         question5: 0,
       });
 
+      const [error, setError] = useState<string | null>(null);
       const navigate = useNavigate();
 
 const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -25,6 +27,19 @@ const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
     const totalScore = Object.values(responses).reduce((acc, score) => acc + score, 0);
     navigate('/result', { state: { totalScore } });
+    
+    try {
+      const token = localStorage.getItem('token');
+      await axios.post('/api/assessments', { responses, totalScore }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      navigate('/result', { state: { totalScore } });
+    } catch (err) {
+      setError('Error submitting assessment');
+      console.error('Error submitting assessment', err);
+    }
 };
 
 return (
@@ -91,6 +106,7 @@ return (
             max="5"
             required
           />
+        {error && <p className="error">{error}</p>}
         </div>
         <button type="submit">Submit</button>
         </form>
@@ -99,4 +115,6 @@ return (
 };
     
 export default assessmentForm;
+
+
 

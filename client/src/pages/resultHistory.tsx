@@ -22,6 +22,7 @@ const resultHistory: React.FC = () => {
             setResults(response.data);
           } catch (err) {
             setError('Error fetching results');
+            console.error('Error fetching results', err);
           }
         };
     
