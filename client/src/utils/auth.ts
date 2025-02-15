@@ -8,6 +8,9 @@ interface UserData {
 }
 
 class AuthService {
+  register(_token: any) {
+    throw new Error('Method not implemented.');
+  }
   getProfile() {
     return jwtDecode<UserData>(this.getToken());
   }

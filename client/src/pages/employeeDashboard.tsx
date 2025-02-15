@@ -8,22 +8,16 @@ const employeeDashboard: React.FC = () => {
     const employeePicture = 'https://via.placeholder.com/150';
 
 return (
-    <div className="employee-dashboard">
-      <div className="employee-info">
-        <img src={employeePicture} alt="Employee" className="employee-picture" />
-        <h2>{employeeName}</h2>
-      </div>
-      <nav className="employee-nav">
-        <ul>
-          <li>
-            <Link to="/resultHistory">Show Past Results</Link>
-          </li>
-          <li>
-            <Link to="/assessmentForm">Start New Assessment</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <div className="container employee-dashboard">
+  <div className="employee-info">
+    <h2>{employeeName}</h2>
+    <img src={employeePicture} alt="Employee" className="employee-picture" />
+  </div>
+  <div className="employee-nav">
+    <Link to="/resultHistory" className="nav-link">Show Past Results</Link>
+    <Link to="/assessmentForm" className="nav-link">Start New Assessment</Link>
+  </div>
+</div>
   );
 };
 

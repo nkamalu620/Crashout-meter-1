@@ -29,9 +29,9 @@ const resultHistory: React.FC = () => {
       }, []);
     
       return (
-        <div>
+        <div className='container'>
           <h2>Previous Results</h2>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {error && <p className="error-message">{error}</p>}
           <table>
             <thead>
               <tr>

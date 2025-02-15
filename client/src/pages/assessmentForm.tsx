@@ -28,12 +28,12 @@ const handleSubmit = async (e: FormEvent) => {
 };
 
 return (
-    <div>
-        <h2 class='nav-link'>Assessment Form</h2>
-        <p class='nav-link'>In this form you will be asked 5 questions about the work you do. TO the best of you knowledge, please answer the questons below, by choosing a rate between 1 and 5 (1 non stressed and 5 being stressed out)</p>
+    <div className="container">
+        <h2>Assessment Form</h2>
+        <p>In this form you will be asked 5 questions about the work you do. To the best of you knowledge, please answer the questons below, by choosing a rate between 1 and 5 (1 non stressed and 5 being stressed out)</p>
         <form onSubmit={handleSubmit}>
     <div>
-    <label class='nav-link'>Question 1: How do you feel when you come into work? </label>
+    <label>Question 1: How do you feel when you come into work? </label>
     <input
             type="number"
             name="question1"
@@ -45,7 +45,7 @@ return (
           />
         </div>
         <div>
-    <label class='nav-link'>Question 2: How do you feel about the difficulties are tasks you are given</label>
+    <label>Question 2: How do you feel about the difficulties are tasks you are given</label>
     <input
             type="number"
             name="question2"
@@ -57,7 +57,7 @@ return (
           />
         </div>
         <div>
-    <label class='nav-link'>Question 3: How do you feel about the amount of takss you are given</label>
+    <label>Question 3: How do you feel about the amount of tasks you are given</label>
     <input
             type="number"
             name="question3"
@@ -69,7 +69,7 @@ return (
           />
         </div>
         <div>
-    <label class='nav-link'>Question 4: How do you feel about the amount of support you are getting?</label>
+    <label>Question 4: How do you feel about the amount of support you are getting?</label>
     <input
             type="number"
             name="question4"
@@ -81,7 +81,7 @@ return (
           />
         </div>
         <div>
-    <label class='nav-link'>Question 5: How do you feel about the overall functions of the job</label>
+    <label>Question 5: How do you feel about the overall functions of the job</label>
     <input
             type="number"
             name="question5"
