@@ -1,7 +1,7 @@
 import { JwtPayload, jwtDecode } from 'jwt-decode';
 
+//defines the userData properties
 interface UserData {
-  // Define the properties of UserData based on your requirements
   id: string;
   email: string;
   exp: number;
@@ -22,16 +22,16 @@ class AuthService {
   
   isTokenExpired(token: string) {
     try {
-      // Attempt to decode the provided token using jwtDecode, expecting a JwtPayload type.
+      
       const decoded = jwtDecode<JwtPayload>(token);
 
-      // Check if the decoded token has an 'exp' (expiration) property and if it is less than the current time in seconds.
+      
       if (decoded?.exp && decoded?.exp < Date.now() / 1000) {
-        // If the token is expired, return true indicating that it is expired.
+       
         return true;
       }
     } catch (err) {
-      // If decoding fails (e.g., due to an invalid token format), catch the error and return false.
+      
       return false;
     }
   };

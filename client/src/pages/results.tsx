@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+// displays the results of assessment
 const results: React.FC = () => {
 
     const location = useLocation();

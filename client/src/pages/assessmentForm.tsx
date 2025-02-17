@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
+// manages the assessment form, where the user can answer 5 questions about their work experience. The answers are stored in a state variable and submitted to the server when the form is submitted. The total score is calculated and passed to the result page.
 const assessmentForm: React.FC = () => {
     const [responses, setResponses] = useState({
         question1: 0,
@@ -15,6 +15,7 @@ const assessmentForm: React.FC = () => {
       const [error, setError] = useState<string | null>(null);
       const navigate = useNavigate();
 
+  // handles the change event for the input fields.
 const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setResponses({
@@ -23,6 +24,7 @@ const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         });
       }
 
+// handle form submission
 const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
     const totalScore = Object.values(responses).reduce((acc, score) => acc + score, 0);
@@ -42,6 +44,7 @@ const handleSubmit = async (e: FormEvent) => {
     }
 };
 
+// output the assessment form
 return (
     <div className="container">
         <h2>Assessment Form</h2>

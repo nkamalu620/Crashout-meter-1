@@ -6,7 +6,7 @@ interface Assessment {
     stressLevel: number;
     date: string;
 }
-
+// handles the result history
 const resultHistory: React.FC = () => {
     const [results, setResults] = useState<Assessment[]>([]);
     const [error, setError] = useState('');

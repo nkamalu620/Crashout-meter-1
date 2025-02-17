@@ -3,6 +3,7 @@ import Auth from '../utils/auth';
 import { login } from '../api/authAPI';
 import { useNavigate } from 'react-router-dom';
 
+// handles the login process
 const Login: React.FC = () => {
     const [loginData, setLoginData] = useState({
       email: '',

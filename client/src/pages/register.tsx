@@ -2,7 +2,7 @@ import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../api/authAPI';
 
-
+// handles the registration process
 const Register: React.FC = () => {
     
   const [registerData, setRegisterData] = useState({
