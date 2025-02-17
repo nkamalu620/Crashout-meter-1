@@ -1,5 +1,7 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  },
   "name": "crashout-meter",
   "version": "1.0.0",
   "description": "Crashout meter project",

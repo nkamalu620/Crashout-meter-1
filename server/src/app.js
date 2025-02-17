@@ -3,7 +3,10 @@ import authRoutes from './middleware/auth.js';
 import employeeRoutes from './routes/api/employeeRoutes.js';
 import assessmentRoutes from './routes/api/assessmentRoutes.js';
 import sequelize from './config/connection.js';
+import dotenv from 'dotenv';
 
+
+dotenv.config();
 const app = express();
 
 app.use(express.json());
