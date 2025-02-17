@@ -1,6 +1,7 @@
 import { DataTypes, Sequelize } from 'sequelize';
 import sequelize from '../config/connection.js';
 
+// creates the employee model using sequelize
 const employee = sequelize.define('employee', {
   Name: {
     type: DataTypes.INTEGER,

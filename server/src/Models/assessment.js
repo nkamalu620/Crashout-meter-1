@@ -2,6 +2,7 @@ import { DataTypes, Sequelize } from 'sequelize';
 import employee from './employee.js';
 import sequelize from '../config/connection.js';
 
+// defines the assessment model using sequelize
 const assessment = sequelize.define('assessment', {
   id: {
     type: DataTypes.INTEGER,
@@ -18,6 +19,7 @@ const assessment = sequelize.define('assessment', {
   }
 });
 
+// creates a relationship between the assessment and employee models
 employee.hasMany(assessment, { foreignKey: 'employeeId' });
 assessment.belongsTo(employee, { foreignKey: 'employeeId' });
 
