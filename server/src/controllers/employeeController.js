@@ -1,5 +1,6 @@
 import employee from '../models/employee.js';
 
+// retrieves all employees
 const getEmployees = async (req, res) => {
     try {
         const employees = await employee.findAll();
@@ -9,6 +10,7 @@ const getEmployees = async (req, res) => {
     }
 };
 
+// retrieves specific employee by ID
 const getEmployeeById = async (req, res) => {
     const { id } = req.params;
     try {
@@ -22,24 +24,18 @@ const getEmployeeById = async (req, res) => {
       }
     };
 
-const createEmployee = async (req, res) => {
-    const { id } = req.params;
-  const { name, email, position } = req.body;
-  try {
-    const employee = await Employee.findByPk(id);
-    if (!employee) {
-      return res.status(404).json({ message: 'Employee not found' });
-    }
-    employee.name = name;
-    employee.email = email;
-    employee.position = position;
-    await employee.save();
-    res.status(200).json({ message: 'Employee updated successfully', employee });
-  } catch (error) {
-    res.status(500).json({ message: 'Error updating employee', error });
-  }
-};
+    // creates a new employee
+    const createEmployee = async (req, res) => {
+      const { name, email, position } = req.body;
+      try {
+        const employee = await employee.create({ name, email, position });
+        res.status(201).json({ message: 'Employee created successfully', employee });
+      } catch (error) {
+        res.status(500).json({ message: 'Error creating employee', error });
+      }
+    };
 
+// updates employee information
 const updateEmployee = async (req, res) => {
     const { id } = req.params;
     const { name, email, position } = req.body;
@@ -58,6 +54,7 @@ const updateEmployee = async (req, res) => {
   }
 };  
 
+// deletes an employee
 const deleteEmployee = async (req, res) => {
     const { id } = req.params;
     try {

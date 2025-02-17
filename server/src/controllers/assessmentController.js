@@ -1,6 +1,7 @@
 import assessment  from '../models/assessment.js';
 import employee from '../models/employee.js';
 
+// retrieves all assessments
 const getAssessments = async (req, res) => {
     try {
         const assessments = await assessment.findAll();
@@ -10,6 +11,7 @@ const getAssessments = async (req, res) => {
     }
 };
 
+// retrieves specific assessment by ID
 const getAssessmentsById = async (req, res) => {
     const { id } = req.params;
     try {
@@ -23,6 +25,7 @@ const getAssessmentsById = async (req, res) => {
       }
     };
 
+// creates a new assessment
 const createAssessment = async (req, res) => {
     const { employeeId, stressLevel, date } = req.body;
   try {
@@ -37,7 +40,7 @@ const createAssessment = async (req, res) => {
   }
 };
 
-
+// deletes an assessment
 const deleteAssessment = async (req, res) => {
     const { id } = req.params;
     try {

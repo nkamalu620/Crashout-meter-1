@@ -4,6 +4,7 @@ import Employee from '../models/employee.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
+
 // registers a new employee
 export const register = async (req, res) => {
   const { name, email, password, position } = req.body;
@@ -16,6 +17,7 @@ export const register = async (req, res) => {
   }
 };
 
+// manages user login
 export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
