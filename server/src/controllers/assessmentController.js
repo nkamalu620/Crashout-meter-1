@@ -1,5 +1,5 @@
-import assessment  from '../Models/assessment.js';
-import employee from '../Models/employee.js';
+import assessment  from '../models/assessment.js';
+import employee from '../models/employee.js';
 
 const getAssessments = async (req, res) => {
     try {
