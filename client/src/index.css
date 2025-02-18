@@ -1,14 +1,14 @@
-/* General styles */
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #420657;
   margin: 0;
   padding: 0;
   color: #333;
 }
 
 h1, h2 {
-  color: #007bff;
+  color: #fff;
   text-align: center;
   margin-top: 20px;
 }
@@ -46,27 +46,27 @@ tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Error message styles */
+
 .error-message {
   color: red;
   text-align: center;
   margin-top: 20px;
 }
 
-/* Navigation link styles */
+
 .nav-link {
   margin: 0 1rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: #007bff;
-  border: 1px solid #007bff;
+  color: #fff;
+  border: 1px solid #fff;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-link:hover {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #fff;
+  color: #420657;
 }
 
 /* Front page styles */
@@ -169,3 +169,7 @@ button[type="submit"]:hover {
   background-color: #007bff;
   color: #fff;
 }
+
+.message {
+  color: white;
+} 
