@@ -9,7 +9,8 @@ This project allows employees to fill out an assessment form about how stressed 
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installation
- n/a (having issues with render)
+ n/a (would hava a link via render to run the app)
+ link to project retrospective: https://docs.google.com/document/d/1MmI3mTMo2B9dVyHkj5IdBJdsZWt4jYiXNuo7DZSsOdM/edit?usp=sharing
 ## Usage
 When you go on the app, you will be promplted to either register or login; you can login if you have already register. Once you are logged in youwill be sent to your dashboard, where you will be given the option to start your assessment. Once you finish your assessment it will give you your score and it will be saved in your results history.
 ## License
