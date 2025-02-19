@@ -6,6 +6,8 @@ import AssessmentForm from './pages/assessmentForm';
 import Results from './pages/results';
 import EmployeeDashboard from './pages/employeeDashboard';
 import FrontPage from './pages/frontPage';
+import ManagerDashboard from './pages/managerDashboard';
+
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/resultHistory" element={<ResultHistory />} />
         <Route path="/assessmentForm" element={<AssessmentForm />} />
         <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
+        <Route path="/managerDashboard" element={<ManagerDashboard />} />
+  
         <Route path="/result" element={<Results />} />
         </Routes>
     </Router>
